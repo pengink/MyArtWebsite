@@ -3,46 +3,75 @@
 }
 
 body {
-  background-color:rgb(24, 24, 24);
+  background: radial-gradient(#221507, #080808);
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
   color: white;
   text-align: center;
+  font-size: 74px;
 }
-.row {
+
+button {
+  position: fixed;
+  top: 4px;
+  right: 2px;
+}
+
+.gallery {
+  columns: 320px;
+}
+
+.gallery img {
+  transition-duration: 100ms;
+  opacity: 1.0;
+  border-width: 2px;
+  border-style: hidden;
+  border-radius: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+
+@keyframes breathing {
+  0% {
+    border-color: black;
+  }
+
+  50% {
+    border-color: white;
+  }
+
+  100% {
+    border-color: black;
+  }
+
+}
+
+.gallery img:hover {
+  animation: breathing 2000ms ease-out infinite normal;
+  opacity: 0.8;
+  border-style: solid;
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+#lightbox.active {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Create four equal columns that sits next to each other */
-.column {
-  flex: 33%;
-  max-width: 33%;
-  padding: 0 4px;
-
-  
-}
-
-.column img {
-  width: 100%;
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
- .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
+#lightbox img {
+  max-width: 100%;
+  max-height: 100%;
 }
