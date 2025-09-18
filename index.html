@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PENGIN'S GALLERY</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, inital-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>PENGIN'S GALLERY</title>
 </head>
 
 <body>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <button id="musicPlayer" onclick="toggleMusic()">Click to play pretensious museum music.</button>
+    
 
-    <h1>PENGIN'S ART</h1>
+    <h1>PENGIN'S GALLERY</h1>
+    <audio id="music" loop>
+        <source src="Minuetto.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <hr>
 
-    <div class="row">
-        <div class="column">
-            <img src="ImageLibrary\birdisaworm.png">
-            <img src="ImageLibrary\bunnymage.png">
-        </div>
-        <div class="column">
-            <img src="ImageLibrary\intenstines.png">
-            <img src="ImageLibrary\thrustingWhat.png">
-        </div>
-        <div class="column">
-            <img src="ImageLibrary\SPAWN.png">
-            <img src="ImageLibrary\gardenvded.png">
-        </div>
+    <div class="gallery">
+        <img src="ImageLibrary\birdisaworm.png">
+        <img src="ImageLibrary\bunnymage.png">
+        <img src="ImageLibrary\intenstines.png">
+        <img src="ImageLibrary\thrustingWhat.png">
+        <img src="ImageLibrary\SPAWN.png">
+        <img src="ImageLibrary\gardenvded.png">
+        <img src="ImageLibrary\octopuswithcandles.png">
+        <img src="ImageLibrary\YUMEKO1.png">
+        <img src="ImageLibrary\portrait.jpg">
+        <img src="ImageLibrary\jirokyoukadraw.png">
+    </div>
+
+    <div id = "header">
+        
     </div>
 
 </body>
