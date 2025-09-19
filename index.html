@@ -1,38 +1,130 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, inital-scale=1.0">
-    <script defer src="script.js"></script>
+    <meta name="viewport">
+    <script deref type="module" src="script.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>PENGIN'S GALLERY</title>
 </head>
 
 <body>
-    <button id="musicPlayer" onclick="toggleMusic()">Click to play pretensious museum music.</button>
+    <button id="musicPlayer">Click to play pretensious museum music.</button>
+    <div id="banner">
+        <img src="ImageLibrary/birdisaworm.png">
+        <h1>PENGIN'S GALLERY</h1>
+    </div>
     
-
-    <h1>PENGIN'S GALLERY</h1>
-    <img id="i" src="ImageLibrary/thrustingWhat.png" style="width: 100vw; top: 0;">
     <audio id="music" loop>
         <source src="Minuetto.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <hr>
+
+    <div id="rect_gradient"></div>
 
     <div class="gallery">
-        <img src="ImageLibrary\Echidna.png">
-        <img src="ImageLibrary\birdisaworm.png">
-        <img src="ImageLibrary\bunnymage.png">
-        <img src="ImageLibrary\intenstines.png">
-        <img src="ImageLibrary\thrustingWhat.png">
-        <img src="ImageLibrary\SPAWN.png">
-        <img src="ImageLibrary\gardenvded.png">
-        <img src="ImageLibrary\octopuswithcandles.png">
-        <img src="ImageLibrary\YUMEKO1.png">
-        <img src="ImageLibrary\portrait.jpg">
-        <img src="ImageLibrary\jirokyoukadraw.png">
-        <img src="ImageLibrary/sket2.png">
+        <div class = "grid-item"><img src="ImageLibrary\SPAWN.png"><p>SPAWN (wip) | 08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary/jareedscene.png"></img><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary/rt4kcomm.png"></img><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary/ruined.png"></img><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary/wonab.png"></img><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary/cakepan.png"></img><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary/car.webp"></img><p>08/17/22</p></div>
+        <div class = "grid-item"><video src="VideoLibrary/trashrabbit.mp4"></video><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\bouka.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\std.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\ketchupart.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\her.png"><p>Redraw of old art (left) | 08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\louvlee1.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\IMG_4398.jpg"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\cafecoffee.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\dreamWarrior.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\edgeMotorOil.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\ru1on.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\sike.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\Lruib.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\coke.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\chernabog.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\nuk.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\crackhead.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\trusci.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\naru.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\pancake.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\christmas.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\december.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\baker.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\bungy.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\fungi.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\super.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\tdr.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\wizardlizard.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\groupie.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\chewy.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\stringtheory.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\mayce.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\squiggle.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\ruinoc.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\shira.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\wub.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\dream.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\arachna.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\plywoood.png" style="filter: blur(10px);"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\thana.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\maxoc.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\freja.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\mimir.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\hatmanfr.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\sperow.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\ladyagnew.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\trident.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\fihs.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\ivy.png"><p>07/19/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\purplepower.png"><p>07/07/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\prism.png"><p>07/29/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\yukibr.png"> <p>02/11/21</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\devilfish.png"><p>08/23/21</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\whenshiny.png"><p>02/21/22</p></div>
+        <div class = "grid-item"><video src="VideoLibrary/snek.mp4"></video><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\thepacifist.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\unounouno.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\jareedback.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\jareedfull.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><video src="VideoLibrary/thehomedepot.mp4"></video><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\whenyoubuildajetpackoutofagun.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\miyazakimango.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\jaboticabahumanoid.png"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\doctman.jpg"><p>08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\fishpeople.png"><p>08/17/22</p></div>
+    </div>
+    <hr>
+    <h2>Artfight 2023</h2>
+    <hr>
+    <div class="gallery">
+         <div class = "grid-item"><img src="ImageLibrary\hahaumbrella.gif"><p>08/01/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\rapier.gif"><p>08/01/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\stemnerds.png"><p>07/31/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\StickmanAppreciationGIF.gif"><p>07/31/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\KICK.jpg"><p>07/27/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\spooderborger.jpg"><p>07/27/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\smileyface.jpg"><p>07/27/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\djdoesnotlook.png"><p>07/24/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\funnydance.gif"><p>07/24/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\ayo.gif"><p>07/18/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\chrome.jpg"><p>07/06/23</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\Jasper_Thorn_transformation.gif"><p>07/04/23</p></div>
+        </div>
+    <hr>
+    <div class="gallery">
+        <div class = "grid-item"><img src="ImageLibrary\Tomoyo.png"><p>Tomoyo | 08/17/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\yumekojabami.png"><p>Yumeko Jabami | 07/19/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\holystickman.png"><p>07/07/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\octopuswithcandles.png"><p>07/29/22</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\Echidna.png"> <p>Echidna | 02/11/21</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\earphonejack.png"><p>Earphone Jack | 08/23/21</p></div>
+        <div class = "grid-item"><img src="ImageLibrary\PortraitofaGirl2022.jpg"><p>02/21/22</p></div>
+
     </div>
 
     <div id = "header">

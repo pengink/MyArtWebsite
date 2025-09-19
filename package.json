@@ -1,0 +1,10 @@
+{
+  "name": "pengins-gallery",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "dependencies": {
+    "imagesloaded": "^5.0.0",
+    "masonry-layout": "^4.2.2"
+  }
+}

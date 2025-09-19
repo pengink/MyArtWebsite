@@ -3,28 +3,35 @@ const lightbox = document.createElement('div');
  lightbox.id = 'lightbox'
  document.body.appendChild(lightbox);
 
- const images = document.querySelectorAll('.gallery img');
+ const images = document.querySelectorAll('.gallery img, .gallery video'); // save volume level
  images.forEach(image => {
  image.addEventListener('click', () => {
           lightbox.classList.add('active');
-          const img = document.createElement('img');
+          const img = document.createElement(image.tagName);
+          if (image.tagName == 'VIDEO') {
+            img.autoplay = true;
+            img.controls = true;
+            img.loop = true;
+          }
           img.src = image.src
           while (lightbox.firstChild) {
               lightbox.removeChild(lightbox.firstChild)
           }
           lightbox.appendChild(img);
-          document.getElementsByClassName("Body").maxHeight = String(img.height) + "px";
       });
   });
  lightbox.addEventListener('click', e =>  {
-     lightbox.classList.remove('active');
-     document.getElementsByClassName("Body").maxHeight = "auto"
+    if (e.target !== lightbox && lightbox.firstChild.tagName == "VIDEO") {return}
+    lightbox.classList.remove('active');
+    lightbox.removeChild(lightbox.firstChild)
+    document.getElementsByClassName("Body").maxHeight = "auto"
  });
 
+
+
  //music controller
-let music = document.getElementById("music");
 music.volume = 0.1;
-function toggleMusic() {
+document.getElementById("musicPlayer").addEventListener('click', () => {
     let music = document.getElementById("music");
     let player = document.getElementById("musicPlayer");
     if (music.paused == true) {
@@ -33,8 +40,9 @@ function toggleMusic() {
     } else {
         player.textContent = "Click to play pretensious museum music."
         music.pause();
+
     }
-}
+});
 
 // var rgb
 
@@ -43,9 +51,9 @@ let root = document.documentElement;
 images.forEach(image => {
     image.addEventListener('mouseover', () => {
         var rgb = getAverageRGB(image);
-        newColor = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
+        let newColor = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
         root.style.setProperty('--newColor', newColor)
-        root.style.setProperty('--newShadow', 'rgba('+rgb.r+','+rgb.g+','+rgb.b+', 0.6)');
+        root.style.setProperty('--newShadow', 'rgba('+rgb.r+','+rgb.g+','+rgb.b+', 0.4)');  // set new color value here
        // document.body.style.backgroundColor = newColor
      });
     image.addEventListener('mouseout', () => {
@@ -101,5 +109,51 @@ function getAverageRGB(imgEl) {
     rgb.b = ~~(rgb.b/count);
     
     return rgb;
-    
 }
+
+// masonry
+function resizeMasonryItem(item){
+  /* Get the grid object, its row-gap, and the size of its implicit rows */
+  var grid = document.getElementsByClassName('gallery')[0],
+      rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('column-gap')),
+      //rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+      rowHeight = 0
+    let content = ".grid-item img";
+    if (!item.querySelector(content))
+        content = ".grid-item video";
+
+    var rowSpan = Math.ceil((item.querySelector(content).getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+    /* Set the spanning as calculated above (S) */
+    item.style.gridRowEnd = 'span '+ rowSpan;
+}
+
+function resizeAllMasonryItems(){
+  // Get all item class objects in one list
+  //WORKs
+  var allItems = document.getElementsByClassName("grid-item");
+
+  /*
+   * Loop through the above list and execute the spanning function to
+   * each list-item (i.e. each masonry item)
+   */
+  for(var i=0;i<allItems.length;i++){
+    resizeMasonryItem(allItems[i]);
+  }
+}
+
+function waitForImages() {
+  var allItems = document.getElementsByClassName("grid-item");
+  for(var i=0;i<allItems.length;i++){
+    imagesLoaded( allItems[i], function(instance) {
+      var item = instance.elements[0];
+      resizeMasonryItem(item);
+    } );
+  }
+}
+
+var masonryEvents = ['load', 'resize'];
+masonryEvents.forEach( function(event) {
+  window.addEventListener(event, resizeAllMasonryItems);
+});
+
+waitForImages();
