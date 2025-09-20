@@ -5,19 +5,41 @@ const lightbox = document.createElement('div');
 
  const images = document.querySelectorAll('.gallery img, .gallery video'); // save volume level
  images.forEach(image => {
- image.addEventListener('click', () => {
+  if (image.tagName == 'IMG') {image.loading = 'lazy';}
+  image.addEventListener('click', () => {
           lightbox.classList.add('active');
           const img = document.createElement(image.tagName);
+          const placeholder = document.createElement(image.tagName);
+          img.loading = 'eager'
+          placeholder.classList.add('blur');
+          placeholder.src = image.src
+          console.log('url('+image.src+')');
+
           if (image.tagName == 'VIDEO') {
             img.autoplay = true;
             img.controls = true;
             img.loop = true;
+            img.src = image.src
+          } 
+          if (image.tagName == 'IMG') {
+            let filename = image.src.substring(image.src.lastIndexOf('/'), image.src.lastIndexOf('.'));
+            let extensions = ['.png', '.jpg', '.webp', '.gif']
+            let extension = 0
+            img.onerror = function() {
+              if (extension < extensions.length) {
+                extension += 1
+              } else {img.src = image.src}
+              img.src = 'ImageLibrary'+filename+extensions[extension];
+            }
+            img.src = 'ImageLibrary'+filename+extensions[extension];
+            lightbox.appendChild(placeholder);
           }
-          img.src = image.src
+
           while (lightbox.firstChild) {
               lightbox.removeChild(lightbox.firstChild)
           }
           lightbox.appendChild(img);
+          document.body.style.overflowY = 'hidden';
       });
   });
  lightbox.addEventListener('click', e =>  {
@@ -25,6 +47,7 @@ const lightbox = document.createElement('div');
     lightbox.classList.remove('active');
     lightbox.removeChild(lightbox.firstChild)
     document.getElementsByClassName("Body").maxHeight = "auto"
+    document.body.style.overflowY = 'scroll';
  });
 
 
